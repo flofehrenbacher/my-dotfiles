@@ -4,8 +4,8 @@
 
 # Resolve DOTFILES_DIR
 
-if [ -d "$HOME/.dotfiles" ]; then
-  DOTFILES_DIR="$HOME/.dotfiles"
+if [ -d "/projects/settings/.dotfiles" ]; then
+  DOTFILES_DIR="/projects/settings/.dotfiles"
 else
   echo "Unable to find dotfiles, exiting."
   return
