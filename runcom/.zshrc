@@ -16,10 +16,11 @@ for DOTFILE in "$DOTFILES_DIR"/system/.{function,alias,zshinit}; do
 done
 
 
-# specific dotfiles
+# specific dotfiles (order hopefully doesn't matter)
 if [ -d "$DOTFILES_DIR"/specific ]; then
-  for DOTFILE in "$DOTFILES_DIR"/specific/.{env}.specific; do
-    [ -f "$DOTFILE" ] && . "$DOTFILE"
+  for SPECIFIC_DOTFILE in "$DOTFILES_DIR"/specific/.*.specific; do
+    echo $SPECIFIC_DOTFILE
+    [ -f "$SPECIFIC_DOTFILE" ] && . "$SPECIFIC_DOTFILE"
   done
 fi
 
