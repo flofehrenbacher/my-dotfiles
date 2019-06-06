@@ -11,7 +11,7 @@ else
 fi
 
 # Source the dotfiles (order matters)
-for DOTFILE in "$DOTFILES_DIR"/system/.{function,alias,zshinit}; do
+for DOTFILE in "$DOTFILES_DIR"/system/.{env,function,alias,zshinit}; do
   [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
 
@@ -19,7 +19,6 @@ done
 # specific dotfiles (order hopefully doesn't matter)
 if [ -d "$DOTFILES_DIR"/specific ]; then
   for SPECIFIC_DOTFILE in "$DOTFILES_DIR"/specific/.*.specific; do
-    echo $SPECIFIC_DOTFILE
     [ -f "$SPECIFIC_DOTFILE" ] && . "$SPECIFIC_DOTFILE"
   done
 fi
@@ -30,5 +29,10 @@ fi
 # rbenv init for ruby
 eval "$(rbenv init -)"
 
+# add all identities stored in keychain
+ssh-add -A
+
 # Export
 export DOTFILES_DIR
+export PATH=$HOME/go/bin:$PATH
+export PATH=$HOME/Library/Python/3.7/bin:$PATH
