@@ -3,8 +3,8 @@
 [ -z "$PS1" ] && return
 
 # Resolve DOTFILES_DIR
-if [ -d "/projects/settings/.dotfiles" ]; then
-  DOTFILES_DIR="/projects/settings/.dotfiles"
+if [ -d "$HOME/projects/settings/.dotfiles" ]; then
+  DOTFILES_DIR="$HOME/projects/settings/.dotfiles"
 else
   echo "Unable to find dotfiles, exiting."
   return
@@ -24,7 +24,7 @@ if [ -d "$DOTFILES_DIR"/specific ]; then
 fi
 
 # z command
-. /projects/help-tools/z/z.sh
+. ~/projects/help-tools/z/z.sh
 
 # rbenv init for ruby
 eval "$(rbenv init -)"
