@@ -1,15 +1,3 @@
 # Kuberenetes
 alias k=kubectl
 
-# mkdir & cd
-mkcdir ()
-{
-    mkdir -p -- "$1" &&
-      cd -P -- "$1"
-}
-
-# compare files
-dif ()
-{
-    git diff --color --no-index "$1" "$2" | diff-so-fancy;
-}

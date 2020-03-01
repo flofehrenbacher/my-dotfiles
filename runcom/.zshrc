@@ -11,7 +11,7 @@ else
 fi
 
 # Source the dotfiles (order matters)
-for DOTFILE in "$DOTFILES_DIR"/system/.{env,function,alias,zshinit}; do
+for DOTFILE in "$DOTFILES_DIR"/system/.{env,functions,alias,zshinit}; do
   [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
 
