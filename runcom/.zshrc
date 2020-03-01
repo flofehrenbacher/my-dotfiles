@@ -33,3 +33,5 @@ eval "$(rbenv init -)"
 export DOTFILES_DIR
 export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/Library/Python/3.7/bin:$PATH
+export CHEAT_CONFIG_PATH="/projects/settings/.dotfiles/cheat/conf.yml"
+
