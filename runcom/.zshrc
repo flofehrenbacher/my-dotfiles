@@ -3,8 +3,8 @@
 [ -z "$PS1" ] && return
 
 # Resolve DOTFILES_DIR
-if [ -d "$HOME/projects/settings/.dotfiles" ]; then
-  DOTFILES_DIR="$HOME/projects/settings/.dotfiles"
+if [ -d "/projects/settings/.dotfiles" ]; then
+  DOTFILES_DIR="/projects/settings/.dotfiles"
 else
   echo "Unable to find dotfiles, exiting."
   return
@@ -28,9 +28,6 @@ fi
 
 # rbenv init for ruby
 eval "$(rbenv init -)"
-
-# add all identities stored in keychain
-ssh-add -A
 
 # Export
 export DOTFILES_DIR
