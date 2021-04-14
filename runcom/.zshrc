@@ -33,6 +33,8 @@ eval "$(rbenv init -)"
 export DOTFILES_DIR
 export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/Library/Python/3.7/bin:$PATH
+export PATH=$HOME/terraform:$PATH
 export CHEAT_CONFIG_PATH="/projects/settings/.dotfiles/cheat/conf.yml"
 
 ssh-add -K $HOME/.ssh/id_rsa > /dev/null
+[ -f "/Users/fehrenbachf/.ghcup/env" ] && source "/Users/fehrenbachf/.ghcup/env" # ghcup-env
