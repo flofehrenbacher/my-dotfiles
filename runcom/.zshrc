@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If not running interactively, don't do anything
 
 [ -z "$PS1" ] && return
@@ -24,7 +31,7 @@ if [ -d "$DOTFILES_DIR"/specific ]; then
 fi
 
 # z command
-. ~/projects/help-tools/z/z.sh
+. /usr/local/etc/profile.d/z.sh
 
 # rbenv init for ruby
 eval "$(rbenv init -)"
@@ -35,4 +42,5 @@ export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/Library/Python/3.7/bin:$PATH
 export CHEAT_CONFIG_PATH="/projects/settings/.dotfiles/cheat/conf.yml"
 
-ssh-add -K $HOME/.ssh/id_rsa > /dev/null
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
