@@ -41,6 +41,7 @@ export DOTFILES_DIR
 export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/Library/Python/3.7/bin:$PATH
 export PATH=$HOME/terraform:$PATH
+export PATH="$PATH:/Users/flo/development/flutter/bin"
 export CHEAT_CONFIG_PATH="/projects/settings/.dotfiles/cheat/conf.yml"
 
 [ -f "/Users/fehrenbachf/.ghcup/env" ] && source "/Users/fehrenbachf/.ghcup/env" # ghcup-env
@@ -50,3 +51,4 @@ export CHEAT_CONFIG_PATH="/projects/settings/.dotfiles/cheat/conf.yml"
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
